@@ -15,6 +15,10 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  a, b, c = [a, b, c].sort
+  raise TriangleError, "One or more triangle's sides should not be less than zero" if a <= 0
+  raise TriangleError, "The sum of two shortest sides should be much longer than the the other" if a + b <= c
+
   if a == b && b == c
       :equilateral
   elsif a == b || a == c || b == c
